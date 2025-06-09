@@ -1,28 +1,25 @@
-name: Outdated Software Check
+name: Check for outdated dependencies
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    types: [opened, synchronize]
 
 jobs:
-  check-outdated:
+  check-dependencies:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
       - name: Install dependencies
         run: npm install
-
-      - name: Check for outdated packages
-        run: |
-          npm outdated --json > outdated.json || echo "{}" > outdated.json
 
       - name: Run issue reporter script
         run: node .github/scripts/create-issue.mjs
