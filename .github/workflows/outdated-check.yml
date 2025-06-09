@@ -25,6 +25,6 @@ jobs:
           npm outdated --json > outdated.json || echo "{}" > outdated.json
 
       - name: Run issue reporter script
-        run: node .github/scripts/create-issue.js
+        run: node .github/scripts/create-issue.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
