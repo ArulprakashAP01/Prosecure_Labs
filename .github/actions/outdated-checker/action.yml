@@ -1,0 +1,9 @@
+name: Outdated Dependency Checker
+description: Detect outdated npm packages and create GitHub issues
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub Token'
+    required: true
+runs:
+  using: 'node16'
+  main: 'scripts/create-issue.mjs'  # Or .js depending on your setup
