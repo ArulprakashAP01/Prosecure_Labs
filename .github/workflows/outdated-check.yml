@@ -1,0 +1,30 @@
+name: Outdated Software Check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-outdated:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check for outdated packages
+        run: |
+          npm outdated --json > outdated.json || echo "{}" > outdated.json
+
+      - name: Run issue reporter script
+        run: node .github/scripts/create-issue.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
