@@ -1,0 +1,24 @@
+{
+  "name": "prosecure_labs",
+  "version": "1.0.0",
+  "description": "ldjls s sksd sdo sdkj dfkj sdkjsd ksd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArulprakashAP01/Prosecure_Labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ArulprakashAP01/Prosecure_Labs/issues"
+  },
+  "homepage": "https://github.com/ArulprakashAP01/Prosecure_Labs#readme",
+  "dependencies": {
+    "@octokit/rest": "^22.0.0"
+  }
+}
