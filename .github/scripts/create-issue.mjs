@@ -4,6 +4,7 @@ const { Octokit } = require("@octokit/rest");
 const token = process.env.GITHUB_TOKEN;
 const octokit = new Octokit({ auth: token });
 
+const GITHUB_REPOSITORY = process.env.GITHUB_REPOSITORY || "ArulprakashAP01/Prosecure_Labs";
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 
 async function run() {
